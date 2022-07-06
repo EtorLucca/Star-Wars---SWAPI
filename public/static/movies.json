@@ -1,0 +1,26 @@
+[
+  {
+    "epi_id": "1",
+    "src": "/static/movie_posters/episode_1.jpg"
+  },
+  {
+    "epi_id": "2",
+    "src": "/static/movie_posters/episode_2.webp"
+  },
+  {
+    "epi_id": "3",
+    "src": "/static/movie_posters/episode_3.jpg"
+  },
+  {
+    "epi_id": "4",
+    "src": "/static/movie_posters/episode_4.webp"
+  },
+  {
+    "epi_id": "5",
+    "src": "/static/movie_posters/episode_5.jpg"
+  },
+  {
+    "epi_id": "6",
+    "src": "/static/movie_posters/episode_6.jpg"
+  }
+]
