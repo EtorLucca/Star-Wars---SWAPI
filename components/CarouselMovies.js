@@ -1,4 +1,5 @@
 import React, { useRef, useContext } from 'react';
+import Image  from "next/image";
 import { LoadContext } from '../contexts/LoadContext';
 import Link from "next/link";
 import styles from "../styles/CarouselMovies.module.css";
@@ -25,7 +26,7 @@ export default function CarouselMovies() {
 
   return (
     <div className={styles.wrapper}>
-      <div><button className={styles.btnCarousel} onClick={handleLeftClick}><img className={styles.leftArrow} src="/static/seta.svg" /></button></div>
+      <div><button className={styles.btnCarousel} onClick={handleLeftClick}><Image className={styles.leftArrow} src="/static/seta.svg" /></button></div>
       <div key="carousel" className={styles.carouselMovie} ref={carousel}>
         <div id="slider" key="slider" className={styles.slider} ref={sliderMovie}>
           {imgData.map((item) => {
@@ -34,7 +35,7 @@ export default function CarouselMovies() {
             return (
               <Link href={`/details/${epi_id}`} key={epi_id}>
                 <div className={styles.item}>
-                  <img className={styles.img} src={src} alt={`Episode ${epi_id}`} />
+                  <Image className={styles.img} src={src} alt={`Episode ${epi_id}`} />
                   <div className={styles.data}>
                     <div className={styles.movieTitle}>{film?.title}</div>
                     <p className={styles.dataTitle}>Data de Lançamento</p>
@@ -48,7 +49,7 @@ export default function CarouselMovies() {
           })}
         </div>
       </div>
-      <div><button className={styles.btnCarousel} onClick={handleRightClick}><img src="/static/seta.svg" /></button></div>
+      <div><button className={styles.btnCarousel} onClick={handleRightClick}><Image src="/static/seta.svg" /></button></div>
     </div>
   );
 }

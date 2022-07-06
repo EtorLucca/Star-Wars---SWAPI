@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Image from "next/image";
 import styles from "../styles/CarouselCharsMovie.module.css";
 
 export default function CarouselCharsMovie(props) {
@@ -23,7 +24,7 @@ export default function CarouselCharsMovie(props) {
 
   return (
     <div className={styles.wrapperChar}>
-      <div><button className={styles.btnCarousel} onClick={handleLeftClick}><img className={styles.leftArrow} src="/static/seta.svg" /></button></div>
+      <div><button className={styles.btnCarousel} onClick={handleLeftClick}><Image className={styles.leftArrow} src="/static/seta.svg" /></button></div>
       <div className={styles.carouselChar} ref={carousel}>
         <div className={styles.slider} ref={sliderChar}>
           {charsMovie?.map((char) => {
@@ -42,7 +43,7 @@ export default function CarouselCharsMovie(props) {
           })}
         </div>
       </div>
-      <div><button className={styles.btnCarousel} onClick={handleRightClick}><img src="/static/seta.svg" /></button></div>
+      <div><button className={styles.btnCarousel} onClick={handleRightClick}><Image src="/static/seta.svg" /></button></div>
     </div>
   );
 }

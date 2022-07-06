@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { LoadContext } from "../contexts/LoadContext";
 import { createReview, getMovieChars } from "../services/api";
@@ -85,7 +86,7 @@ export default function Details() {
             </div>
           </div>
           <div className={styles.imgContainer}>
-            <img className={styles.img} src={image?.src} />
+            <Image className={styles.img} src={image?.src} />
           </div>
         </div>
       </section>

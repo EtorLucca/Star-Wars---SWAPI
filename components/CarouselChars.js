@@ -1,5 +1,6 @@
-import React, { useRef, useContext } from 'react';
-import { LoadContext } from '../contexts/LoadContext';
+import React, { useRef, useContext } from "react";
+import Image from "next/image";
+import { LoadContext } from "../contexts/LoadContext";
 import styles from "../styles/CarouselChars.module.css";
 
 export default function CarouselChars() {
@@ -24,11 +25,15 @@ export default function CarouselChars() {
 
   return (
     <div className={styles.wrapperChar}>
-      <div><button className={styles.btnCarousel} onClick={handleLeftClick}><img className={styles.leftArrow} src="/static/seta.svg" /></button></div>
+      <div>
+        <button className={styles.btnCarousel} onClick={handleLeftClick}>
+          <Image className={styles.leftArrow} src="/static/seta.svg" />
+        </button>
+      </div>
       <div className={styles.carouselChar} ref={carousel}>
         <div className={styles.slider} ref={sliderChar}>
           {chars?.map((char) => {
-            const {name, birth_year, height} = char;
+            const { name, birth_year, height } = char;
             return (
               <div className={styles.card} key={name}>
                 <div className={styles.data}>
@@ -36,14 +41,18 @@ export default function CarouselChars() {
                   <p className={styles.dataTitle}>Ano de Nascimento</p>
                   <p className={styles.dataChar}>{birth_year}</p>
                   <p className={styles.dataTitle}>Altura</p>
-                  <p className={styles.dataChar}>{height/100} m</p>
+                  <p className={styles.dataChar}>{height / 100} m</p>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      <div><button className={styles.btnCarousel} onClick={handleRightClick}><img src="/static/seta.svg" /></button></div>
+      <div>
+        <button className={styles.btnCarousel} onClick={handleRightClick}>
+          <Image src="/static/seta.svg" />
+        </button>
+      </div>
     </div>
   );
 }
