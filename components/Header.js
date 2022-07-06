@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Header.module.css";
 
-export default function Header({ onSearch }) {
+export default function Header() {
 
   return (
     <header className={styles.header}>
@@ -13,13 +13,6 @@ export default function Header({ onSearch }) {
           type="text"
           name="query"
           id="query"
-          // value={query}
-          // onChange={(e) => setQuery(e.target.value)}
-          // onKeyUp={(e) => {
-          //   if(e.keyCode == 13) {
-          //     onSearch(query);
-          //   }
-          // }}
         ></input>
       </div>
     </header>

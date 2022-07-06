@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { LoadContext } from "../contexts/LoadContext";
 import { createReview, getMovieChars } from "../services/api";
@@ -8,17 +8,16 @@ import CarouselCharsMovie from "./CarouselCharsMovie";
 export default function Details() {
   const { query } = useRouter();
   const { movieData, imgData } = useContext(LoadContext);
+  const [charList, serCharList] = useState();
 
   let film = movieData?.find((obj) => {
     return obj.episode_id == query.id;
   });
 
-  let charList = film?.characters
-
-  let chars = Promise.resolve(getMovieChars(charList)).then(item => {return item})
-  console.log(chars)
-
-
+  useEffect(() => {
+    return () => getMovieChars(film?.characters).then(serCharList)
+  })
+  
   let image = imgData?.find((obj) => {
     return obj.epi_id == query.id;
   });
@@ -94,7 +93,7 @@ export default function Details() {
         <div className={styles.linha}>
           <span className={styles.titulo}>Characters of the movie</span>
         </div>
-        <CarouselCharsMovie />
+        <CarouselCharsMovie chars={charList}/>
       </section>
       <section className={styles.sectionTitle}>
         <div className={styles.linha}>

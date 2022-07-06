@@ -13,17 +13,7 @@ export const getMovies = async () => {
 export const getChars = async () => {
   let url = `/people/`;
   let character;
-  // await axios.get(urlChar)
-  //   .then(characters => {
-  //     characters.data.results.forEach(element => {
-  //       character.push(element);
-  //     })
-
-  //     // if(characters.data.next) {
-  //     //   getChars(characters.data.next);
-  //     // }
-  //   });
-  // console.log(character)
+  
   character = await api.get(url);
 
   return character.data.results;
@@ -34,9 +24,8 @@ export async function getMovieChars(charList) {
   for (var i = 0; i < charList?.length; i++) {
     let teste = await api.get(charList[i]);
     character = character.concat(teste.data);
-
   }
-  // console.log(character)
+  
   return character;
 };
 

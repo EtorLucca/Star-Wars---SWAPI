@@ -1,14 +1,13 @@
-import React, { useRef, useContext } from 'react';
-import { LoadContext } from '../contexts/LoadContext';
-import styles from "../styles/CarouselChars.module.css";
+import React, { useRef } from 'react';
+import styles from "../styles/CarouselCharsMovie.module.css";
 
-export default function CarouselCharsMovie() {
-  const { charsData } = useContext(LoadContext);
+export default function CarouselCharsMovie(props) {
   const carousel = useRef(null);
   const sliderChar = useRef(null);
 
+  let charsMovie = props?.chars;
+
   var direction;
-  let chars = charsData;
 
   function handleLeftClick(e) {
     e.preventDefault();
@@ -27,7 +26,7 @@ export default function CarouselCharsMovie() {
       <div><button className={styles.btnCarousel} onClick={handleLeftClick}><img className={styles.leftArrow} src="/static/seta.svg" /></button></div>
       <div className={styles.carouselChar} ref={carousel}>
         <div className={styles.slider} ref={sliderChar}>
-          {chars?.map((char) => {
+          {charsMovie?.map((char) => {
             const {name, birth_year, height} = char;
             return (
               <div className={styles.card} key={name}>
