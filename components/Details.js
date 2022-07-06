@@ -16,9 +16,9 @@ export default function Details() {
   });
 
   useEffect(() => {
-    return () => getMovieChars(film?.characters).then(serCharList)
-  })
-  
+    return () => getMovieChars(film?.characters).then(serCharList);
+  });
+
   let image = imgData?.find((obj) => {
     return obj.epi_id == query.id;
   });
@@ -28,7 +28,6 @@ export default function Details() {
   const [review, setReview] = useState("");
 
   async function SaveReview() {
-
     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
     const newReview = {
@@ -49,11 +48,9 @@ export default function Details() {
     setName("");
     setEmail("");
     setReview("");
- 
 
     //------ Método POST --------------------------------
-    await createReview(newReview, query.id);   //Vai retornar erro 404 no console.
-    
+    await createReview(newReview, query.id); //Vai retornar erro 404 no console.
   }
 
   return (
@@ -86,7 +83,12 @@ export default function Details() {
             </div>
           </div>
           <div className={styles.imgContainer}>
-            <Image className={styles.img} src={image?.src} />
+            <Image
+              className={styles.img}
+              src={image?.src}
+              width="336px"
+              height="486px"
+            />
           </div>
         </div>
       </section>
@@ -94,7 +96,7 @@ export default function Details() {
         <div className={styles.linha}>
           <span className={styles.titulo}>Characters of the movie</span>
         </div>
-        <CarouselCharsMovie chars={charList}/>
+        <CarouselCharsMovie chars={charList} />
       </section>
       <section className={styles.sectionTitle}>
         <div className={styles.linha}>

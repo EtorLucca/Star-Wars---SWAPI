@@ -27,7 +27,7 @@ export default function CarouselChars() {
     <div className={styles.wrapperChar}>
       <div>
         <button className={styles.btnCarousel} onClick={handleLeftClick}>
-          <Image className={styles.leftArrow} src="/static/seta.svg" />
+          <Image className={styles.leftArrow} src="/static/seta.svg" width="56px" height="56px"/>
         </button>
       </div>
       <div className={styles.carouselChar} ref={carousel}>
@@ -50,7 +50,7 @@ export default function CarouselChars() {
       </div>
       <div>
         <button className={styles.btnCarousel} onClick={handleRightClick}>
-          <Image src="/static/seta.svg" />
+          <Image src="/static/seta.svg" width="56px" height="56px"/>
         </button>
       </div>
     </div>
