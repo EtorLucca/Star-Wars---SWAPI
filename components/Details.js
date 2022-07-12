@@ -96,7 +96,10 @@ export default function Details() {
         <div className={styles.linha}>
           <span className={styles.titulo}>Characters of the movie</span>
         </div>
-        <CarouselCharsMovie chars={charList} />
+        {
+          !charList ? (<div className={styles.carregando}>Loading...</div>) : <CarouselCharsMovie chars={charList} />
+        }
+        
       </section>
       <section className={styles.sectionTitle}>
         <div className={styles.linha}>

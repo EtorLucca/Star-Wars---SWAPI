@@ -38,9 +38,9 @@ export default function CarouselChars() {
               <div className={styles.card} key={name}>
                 <div className={styles.data}>
                   <div className={styles.charTitle}>{name}</div>
-                  <p className={styles.dataTitle}>Ano de Nascimento</p>
+                  <p className={styles.dataTitle}>Year of birth</p>
                   <p className={styles.dataChar}>{birth_year}</p>
-                  <p className={styles.dataTitle}>Altura</p>
+                  <p className={styles.dataTitle}>Height</p>
                   <p className={styles.dataChar}>{height / 100} m</p>
                 </div>
               </div>

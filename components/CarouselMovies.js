@@ -60,9 +60,9 @@ export default function CarouselMovies() {
                   />
                   <div className={styles.data}>
                     <div className={styles.movieTitle}>{film?.title}</div>
-                    <p className={styles.dataTitle}>Data de Lançamento</p>
+                    <p className={styles.dataTitle}>Release Date</p>
                     <p className={styles.dataMovie}>{film?.release_date}</p>
-                    <p className={styles.dataTitle}>Diretor</p>
+                    <p className={styles.dataTitle}>Director</p>
                     <p className={styles.dataMovie}>{film?.director}</p>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ export default function CarouselCharsMovie(props) {
 
   let charsMovie = props?.chars;
 
-  var direction;
+  var direction = 1;
 
   function handleLeftClick(e) {
     e.preventDefault();
@@ -37,9 +37,9 @@ export default function CarouselCharsMovie(props) {
               <div className={styles.card} key={name}>
                 <div className={styles.data}>
                   <div className={styles.charTitle}>{name}</div>
-                  <p className={styles.dataTitle}>Ano de Nascimento</p>
+                  <p className={styles.dataTitle}>Year of Birth</p>
                   <p className={styles.dataChar}>{birth_year}</p>
-                  <p className={styles.dataTitle}>Altura</p>
+                  <p className={styles.dataTitle}>Height</p>
                   <p className={styles.dataChar}>{height / 100} m</p>
                 </div>
               </div>
