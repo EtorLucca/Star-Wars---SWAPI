@@ -26,7 +26,7 @@ export const LoadProvider = ({ children }) => {
 
     (async () => await loadData())();
 
-    fetch("http://localhost:3000/static/movies.json")
+    fetch("https://ojourlfake.glitch.me/movies.json")
     .then((res) => res.json())
     .then(setImgData);
 
