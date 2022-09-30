@@ -22,8 +22,8 @@ export const getChars = async () => {
 export async function getMovieChars(charList) {
   let character = [];
   for (var i = 0; i < charList?.length; i++) {
-    let teste = await api.get(charList[i]);
-    character = character.concat(teste.data);
+    let list = await api.get(charList[i]);
+    character = character.concat(list.data);
   }
   
   return character;

@@ -1,7 +1,7 @@
-import React from 'react'
-import Head from 'next/head'
-import { LoadProvider } from '../contexts/LoadContext'
-import '../styles/reset.css'
+import React from "react";
+import Head from "next/head";
+import { LoadProvider } from "../contexts/LoadContext";
+import "../styles/reset.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,10 +11,10 @@ function MyApp({ Component, pageProps }) {
         <title>Star Wars Universe</title>
       </Head>
       <LoadProvider>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </LoadProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

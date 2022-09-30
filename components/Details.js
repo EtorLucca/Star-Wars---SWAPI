@@ -5,6 +5,9 @@ import { LoadContext } from "../contexts/LoadContext";
 import { createReview, getMovieChars } from "../services/api";
 import styles from "../styles/Details.module.css";
 import CarouselCharsMovie from "./CarouselCharsMovie";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Details() {
   const { query } = useRouter();
@@ -97,7 +100,7 @@ export default function Details() {
           <span className={styles.titulo}>Characters of the movie</span>
         </div>
         {
-          !charList ? (<div className={styles.carregando}>Loading...</div>) : <CarouselCharsMovie chars={charList} />
+          !charList ? (<div className={styles.carregando}><FontAwesomeIcon icon={faCircleNotch} className={`${styles.loader} fa-spin`} />Loading...</div>) : <CarouselCharsMovie chars={charList} />
         }
         
       </section>

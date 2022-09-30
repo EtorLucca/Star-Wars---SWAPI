@@ -184,3 +184,9 @@
   height: 100px;
   margin: 0 auto;
 }
+
+.loader {
+  margin-right: 16px;
+  height: 30px;
+  color: #FC7071;
+}
